@@ -1,8 +1,113 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Typescript Tailwind`,
-    description: `An example config of Gatsby + TypeScript + Tailwind CSS`,
+    title: `Reactive Marketring`,
+    description: `Your complete digital solutions ally!`,
     author: `@gatsbyjs`,
+    info: {
+      contact: "1-111-222-333",
+      email: "help@propsmart.ca",
+    },
+    nav: {
+      logo: {
+        title: "PropsMart",
+      },
+      menu: {
+        items: [
+          {
+            title: "Home",
+            href: "/",
+          },
+          {
+            title: "Services",
+            href: "/services",
+            items: [
+              {
+                title: "Research & Planning",
+                href: "/research-and-planning",
+              },
+              {
+                title: "Technology & Data Science",
+                href: "/technology-and-data-science",
+              },
+              {
+                title: "Branding & Marketing",
+                href: "/branding-and-marketing",
+              },
+              {
+                title: "Creativity & Design",
+                href: "/creativity-and-design",
+              },
+            ],
+          },
+          // {
+          //   title: "Sell",
+          //   href: "/sell",
+          // },
+          {
+            title: "About",
+            href: "/about",
+          },
+          {
+            title: "Contact",
+            href: "/contact",
+          },
+        ],
+      },
+    },
+    footerMenu: {
+      items: [
+        {
+          title: "Links",
+          items: [
+            {
+              title: "Home",
+              href: "/",
+            },
+            {
+              title: "Services",
+              href: "#",
+            },
+            // {
+            //   title: "Sell",
+            //   href: "/sell",
+            // },
+            {
+              title: "About",
+              href: "/about",
+            },
+            // {
+            //   title: "Contact",
+            //   href: "/contact",
+            // },
+          ],
+        },
+        {
+          title: "Help",
+          items: [
+            {
+              title: "Privacy Policy",
+              href: "/privacy",
+            },
+            {
+              title: "FAQs",
+              href: "/faq",
+            },
+            {
+              title: "Terms & Conditions",
+              href: "/tnc",
+            },
+            {
+              title: "Contact",
+              href: "/contact",
+            },
+            // {
+            //   title: "Contact",
+            //   href: "/contact",
+            // },
+          ],
+        },
+      ],
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -48,6 +153,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-tsconfig-paths`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -3,3 +3,25 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Spartan";
+  background-color: #fff;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.max-w-1024 {
+  max-width: 1024px;
+}
+.max-w-1366 {
+  max-width: 1366px;
+}
+
+a {
+  color: #2898FF;
+}
+a:hover {
+  color: rgb(90, 90, 255);
+}

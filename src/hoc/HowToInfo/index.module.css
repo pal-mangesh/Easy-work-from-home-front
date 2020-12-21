@@ -1,0 +1,7 @@
+.wrapper ul {
+  list-style: circle;
+}
+.wrapper ul li {
+  margin: 10px 0px;
+  margin-left: 20px;
+}

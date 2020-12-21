@@ -1,0 +1,5 @@
+@media (max-width: 600px) {
+  .field {
+    flex-basis: 100% !important;
+  }
+}

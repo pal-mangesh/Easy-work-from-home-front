@@ -45,8 +45,18 @@
     /* Module Resolution Options */
     "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
     "resolveJsonModule": true,
-    // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
-    // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@css/*": ["src/css/*"],
+      "@images/*": ["src/images/*"],
+      "@pages/*": ["src/pages/*"],
+      "@themes/*": ["src/themes/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@hoc/*": ["src/hoc/*"],
+      "@containers/*": ["src/containers/*"],
+      "@utils/*": ["src/utils/*"],
+    },                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
     // "types": [],                           /* Type declaration files to be included in compilation. */
