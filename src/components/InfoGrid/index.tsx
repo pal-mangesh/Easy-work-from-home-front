@@ -26,8 +26,8 @@ function InfoGrid({ items, bgTextColor = "text-black" }: Props): ReactElement {
             >
               {("0" + (index + 1)).slice(-2)}
             </span>
-            <h3 className="text-lg font-bold">{item.title}</h3>
-            <h5 className="py-8 text-justify">{item.subTitle}</h5>
+            <h3 className="text-lg font-bold" dangerouslySetInnerHTML={{__html:item.title || ""}}/>
+            <h5 className="py-8 text-justify" dangerouslySetInnerHTML={{__html:item.subTitle || ""}}/>
             {item.link ? (
               <a className="my-16 font-bold" href={item.link}>
                 {item.linkText || "More"}

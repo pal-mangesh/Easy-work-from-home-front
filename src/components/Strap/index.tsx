@@ -12,14 +12,13 @@ function Strap({ children, className, style, bg }: Props): ReactElement {
     <>
       <div
         className={`w-full relative ${className} `}
-        style={{ minHeight: "150px" }}
+        style={{ minHeight: "150px", ...style }}
       >
         <div
           className="pointer-events-none absolute w-full h-full bg-no-repeat md:bg-cover bg-contain bg-center"
           style={{
             backgroundImage: `url(${bg || require("@images/strap-bg.svg")})`,
             zIndex: 0,
-            ...style,
           }}
         />
         <div className="max-w-1366 m-auto flex flex-col md:flex-row justify-center items-center py-16">
