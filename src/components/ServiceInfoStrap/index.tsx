@@ -16,7 +16,10 @@ function ServiceInfoStrap({ title, children }: Props): ReactElement {
           />
         </div>
         <div className="w-full md:w-1/3 md:pl-8 my-4 md:my-0 ">
-          <h3 className="text-2xl ">{title}</h3>
+          <h3
+            className="text-2xl "
+            dangerouslySetInnerHTML={{ __html: title || "" }}
+          />
         </div>
         <div className="text-justify px-8">{children}</div>
       </div>

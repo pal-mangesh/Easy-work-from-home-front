@@ -10,58 +10,58 @@ interface Props {}
 function BrandingAndMarketingContainer({}: Props): ReactElement {
   const services: IInfoGridItem[] = [
     {
-      title: "Build-up a Strategy",
+      title: "Web Wide <br/> Social Reach",
       subTitle:
-        "Most businesses fail wihtout a good one! Strategy building seems scary to hear as a word but is the utmost important  step in the initial phase. ReactiveMarkerting makes sure that you have a sound strategy to tackle major challenges on the road to success of your company!",
-      linkText: "Read More",
-      link: "/research-and-planning",
+        "Reach out to the crowd through socially established platforms using proven tools and methodologies. Our skillful team leaves no stone unturned to make sure your brand reaches out to the maximum.",
     },
     {
-      title: "Make an Action Plan",
+      title: "Branding your <br/> & Vision",
       subTitle:
-        "Divide the strategy into a collectiive action plan. constituting categorized actions to be performed by various teams, on a correct schedule. We ensure, each step taken contributes to the overall success!",
-      linkText: "Read More",
-      link: "/research-and-planning",
+        "Crafting unique identity for your unique business. Narrate your awesome story to your target audience. Brand position & perception drives more than 30% of your results",
     },
     {
-      title: "Careful Execution",
+      title: "Complete<br/>Marketing Solution",
       subTitle:
-        "Despite our simplification of the term strategy, there’s no doubt it can be difficult to get started building one. We should perceive what a digital marketing campaign looks like, and then, we’ll jump into those seven building blocks to help you create an effective digital marketing strategy to set up your business for online success.",
-      linkText: "Read More",
-      link: "/research-and-planning",
+        "Don't miss the opportunity of marketing to 2bn customers. Engage with customers in real-time & create loyal fan base. More than 60% of the qualified leads come from social media channels.  More than 70% of the companies use Digital Marketing to improve their revenue.",
     },
   ]
 
   const process = [
     {
-      title: "IDEATION",
+      title: "BRAND IDENTITY",
       subTitle:
-        "Give your product idea a shape. Plan and evaluate the essential features of your product to accomplish your business goals and eliminate possible mistakes. No matter you need to craft the idea for a completely new product or evaluate the quality of an already existing one - we're here to help you.",
-      imageURL: require("@images/rnp-ideation-icon.svg"),
+        "Concept Creation is an art of giving life to an entity which will have its unique identity, Values, Tone, Temper & Social Status. We gain deeper understanding about your business & create an identity to reflect the same.",
+      imageURL: require("@images/bnm-brand-icon.svg"),
     },
     {
-      title: "PRODUCT DESIGN",
+      title: "SEARCH ENGINE OPTIMIZATION",
       subTitle:
-        "A five-day workshop that will help you answer crucial business questions, plan the essential features of your product and reduce the risk of bringing a product to the market.",
-      imageURL: require("@images/rnp-product-design-icon.svg"),
+        "If you want your business to be visible to online customers, your website should be SEO compatible. We optimize your website so that Search Engines can understand your business and present at the top of the search results.",
+      imageURL: require("@images/bnm-seo-icon.svg"),
     },
     {
-      title: "SCOPING SESSION",
+      title: "CAMPAIGN MANAGEMENT",
       subTitle:
-        "A workshop aimed at shaping your business idea, answering questions regarding project planning, time estimation and budgeting",
-      imageURL: require("@images/rnp-scoping-session-icon.svg"),
+        "If you are new in digital advertising, we can work with you from scratch, identifying which advertising networks are best for your business. We can also easily step in and improve upon any existing campaigns on the Google AdWords Platform, Bing Ads, Facebook, and others.",
+      imageURL: require("@images/bnm-campaign-icon.svg"),
     },
     {
-      title: "UX REVIEW",
+      title: "CUSTOM LANDING PAGES",
       subTitle:
-        "An evaluation which will help you radically improve your product by eliminating all UX issues to get a truly appealing and streamlined experience that users will love.",
-      imageURL: require("@images/rnp-ux-review-icon.svg"),
+        "Attractive and converting landing page design. Single page story telling. Pages that help you convert leads to clients. Call to action options. Subscription Forms. Get Started Forms.",
+      imageURL: require("@images/bnm-landing-icon.svg"),
     },
     {
-      title: "R&D",
+      title: "PREDICTIVE ANALYTICS",
       subTitle:
-        "A validation of your idea in just 6 weeks. Experiment with ideas and technologies to secure cutting-edge products and sustained development.",
-      imageURL: require("@images/rnp-rnd-icon.svg"),
+        "Analytics tools for campaign improvements. Custom artificial intelligence algorithms. Machine learning clusters for predictions.",
+      imageURL: require("@images/bnm-predictive-icon.svg"),
+    },
+    {
+      title: "BULK SMS/EMAIL",
+      subTitle:
+        "Bulk message based marketing. Email based marketing. Cold Mails and Calls. Email content that converts.",
+      imageURL: require("@images/bnm-sms-icon.svg"),
     },
   ]
 
