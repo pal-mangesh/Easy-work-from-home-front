@@ -107,14 +107,14 @@ function HomeContainer(): ReactElement {
       title: "Founder",
       subTitle: "Props Mart LLC.",
     },
-    {
-      imageURL: require("@images/rahul-dp.png"),
-      author: "Rahul",
-      comment:
-        "“Experienced team, helped me with real estate lead generation. Satisifed so far!”",
-      title: "Founder",
-      subTitle: "Marketise.ca",
-    },
+    // {
+    //   imageURL: require("@images/rahul-dp.png"),
+    //   author: "Rahul",
+    //   comment:
+    //     "“Experienced team, helped me with real estate lead generation. Satisifed so far!”",
+    //   title: "Founder",
+    //   subTitle: "Marketise.ca",
+    // },
     {
       imageURL: require("@images/saurabh-dp.png"),
       author: "Saurabh",
