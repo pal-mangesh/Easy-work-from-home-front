@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import React, { ReactElement } from "react"
 
 export interface IInfoGridItem {
@@ -26,12 +27,18 @@ function InfoGrid({ items, bgTextColor = "text-black" }: Props): ReactElement {
             >
               {("0" + (index + 1)).slice(-2)}
             </span>
-            <h3 className="text-lg font-bold" dangerouslySetInnerHTML={{__html:item.title || ""}}/>
-            <h5 className="py-8 text-justify" dangerouslySetInnerHTML={{__html:item.subTitle || ""}}/>
+            <h3
+              className="text-lg font-bold"
+              dangerouslySetInnerHTML={{ __html: item.title || "" }}
+            />
+            <h5
+              className="py-8 text-justify"
+              dangerouslySetInnerHTML={{ __html: item.subTitle || "" }}
+            />
             {item.link ? (
-              <a className="my-16 font-bold" href={item.link}>
+              <Link className="my-16 font-bold" to={item.link}>
                 {item.linkText || "More"}
-              </a>
+              </Link>
             ) : (
               ""
             )}

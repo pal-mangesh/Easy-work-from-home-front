@@ -3,6 +3,9 @@ import Heading from "@components/Heading"
 import InfoGrid, { IInfoGridItem } from "@components/InfoGrid"
 import ServiceInfoStrap from "@components/ServiceInfoStrap"
 import Strap from "@components/Strap"
+import AboutUsStrap from "@hoc/AboutUsStrap"
+import ReachOutBox from "@hoc/ReachOutBox"
+import { navigate } from "gatsby"
 import React, { ReactElement } from "react"
 
 interface Props {}
@@ -13,22 +16,22 @@ function TechnologyAndDataScienceContainer({}: Props): ReactElement {
       title: "Project Research &<br/> Ellicitation",
       subTitle:
         "Majority of project faliures happen when there is no research and planning done prior to realization! Most complex problems need acute thinking and preparations. Our experienced research and development experts build a solid plan to tackle any challenge on the road to project’s sucess.",
-      linkText: "Read More",
-      link: "/research-and-planning",
+      // linkText: "Read More",
+      // link: "/research-and-planning",
     },
     {
       title: "Agile Team With <br/>Proven Strategies",
       subTitle:
         "Divide the strategy into a collectiive action plan. constituting categorized actions to be performed by various teams, on a correct schedule. We ensure, each step taken contributes to the overall success!",
-      linkText: "Read More",
-      link: "/research-and-planning",
+      // linkText: "Read More",
+      // link: "/research-and-planning",
     },
     {
       title: "Data Analysis &<br/>Growth Hacking",
       subTitle:
         "With the help of industry wide used opensourced and inhouse tools, our data experts continously and rigrously collect and analyse data from system wide sources. The insightful results derrive company’s growth and help enhance the product to adapt to the current market needs.",
-      linkText: "Read More",
-      link: "/research-and-planning",
+      // linkText: "Read More",
+      // link: "/research-and-planning",
     },
   ]
 
@@ -103,7 +106,7 @@ function TechnologyAndDataScienceContainer({}: Props): ReactElement {
               </h3>
             </div>
             <div className="mt-8 w-1/2 md:w-1/3 mx-auto">
-              <Button type="secondary">Contact Us</Button>
+              <Button type="secondary" onClick={()=>navigate("/contact")}>Contact Us</Button>
             </div>
           </div>
         </Strap>
@@ -139,6 +142,8 @@ function TechnologyAndDataScienceContainer({}: Props): ReactElement {
           ))}
         </div>
       </div>
+      <AboutUsStrap/>
+      <ReachOutBox/>
     </>
   )
 }

@@ -77,14 +77,12 @@ function NavBar({
                 <ul className="flex items-stretch list-none h-full">
                   {menu?.items.map((item: any) => (
                     <>
-                      <li className={"relative " +styles.menuItem}>
+                      <li className={"relative " + styles.menuItem}>
                         <Link
                           className="text-black hover:text-gray-400"
                           to={item.href}
                         >
-                          <span className="py-2 px-8  ">
-                            {item.title}
-                          </span>
+                          <span className="py-2 px-8  ">{item.title}</span>
                         </Link>
                         {item.items && item.items.length ? (
                           <>
@@ -100,9 +98,7 @@ function NavBar({
                                     className="text-black hover:text-gray-100 hover:bg-blue-500"
                                     to={si.href || "#"}
                                   >
-                                    <li className="p-4 ">
-                                      {si.title}
-                                    </li>
+                                    <li className="p-4 ">{si.title}</li>
                                   </Link>
                                 ))}
                               </ul>
@@ -136,7 +132,7 @@ function NavBar({
                 {currentLocation ? currentLocation.name : "Not Selected"}
               </span>
             </div> */}
-            {jwt && jwt.length ? (
+            {/* {jwt && jwt.length ? (
               ""
             ) : (
               <div className="flex">
@@ -152,7 +148,7 @@ function NavBar({
                   <span>Account</span>
                 </a>
               </div>
-            )}
+            )} */}
           </div>
           <div className="flex md:hidden flex-1 justify-end">
             {!visible ? (
@@ -186,6 +182,25 @@ function NavBar({
                           {item.title}
                         </li>
                       </Link>
+                      {item.items && item.items.length ? (
+                        <>
+                          {item.items.map((sitem: any) => (
+                            <>
+                              <Link
+                                className="text-gray-800 hover:text-gray-700"
+                                to={sitem.href}
+                                onClick={onLinkClick}
+                              >
+                                <li className="pl-8 pr-4 py-4 hover:bg-gray-300 w-full">
+                                  {sitem.title}
+                                </li>
+                              </Link>
+                            </>
+                          ))}
+                        </>
+                      ) : (
+                        ""
+                      )}
                     </>
                   ))}
                 </ul>

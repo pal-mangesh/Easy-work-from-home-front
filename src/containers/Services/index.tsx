@@ -2,6 +2,7 @@ import Button from "@components/Button"
 import InfoGrid, { IInfoGridItem } from "@components/InfoGrid"
 import ServiceInfoStrap from "@components/ServiceInfoStrap"
 import Strap from "@components/Strap"
+import { navigate } from "gatsby"
 import React, { ReactElement } from "react"
 
 function ServicesContainer(): ReactElement {
@@ -18,21 +19,21 @@ function ServicesContainer(): ReactElement {
       subTitle:
         "Curating required tools and strategies, derived from the research and investigation done for particular usecase in hand. Our team of software engineers and digital media experts setup the infrastructure required to execute the strategy as smoothly as possible! ",
       linkText: "Read More",
-      link: "/research-and-planning",
+      link: "/technology-and-data-science",
     },
     {
       title: "Branding & Marketing",
       subTitle:
         "With experience of over 15+ years, our media experts always take the proven paths to spread your identity in the market! We understand how much your brand face is important to your business, so we promote you over the most profitable platforms!",
       linkText: "Read More",
-      link: "/research-and-planning",
+      link: "/branding-and-marketing",
     },
     {
       title: "Design & Creativity",
       subTitle:
         "Solving complex problems, needs creative minds with design-thinking to streamline the ideas of creating innovative solutions! Our team of design experts always makes sure that your business is publicized correctly through our Creative and Social Media Designs!",
       linkText: "Read More",
-      link: "/research-and-planning",
+      link: "/creativity-and-design",
     },
   ]
   return (
@@ -73,7 +74,7 @@ function ServicesContainer(): ReactElement {
               </h3>
             </div>
             <div className="mt-8 w-1/2 md:w-1/3 mx-auto">
-              <Button type="secondary">Contact Us</Button>
+              <Button type="secondary" onClick={()=>navigate("/contact")}>Contact Us</Button>
             </div>
           </div>
         </Strap>

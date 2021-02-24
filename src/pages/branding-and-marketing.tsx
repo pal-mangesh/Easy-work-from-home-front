@@ -7,7 +7,7 @@ import React, { ReactElement } from "react"
 function Services(): ReactElement {
   return (
     <>
-      <DefaultLayout pageTitle="Services - Research & Planning">
+      <DefaultLayout pageTitle="Services - Branding & Marketing">
         <BrandingAndMarketingContainer />
       </DefaultLayout>
     </>

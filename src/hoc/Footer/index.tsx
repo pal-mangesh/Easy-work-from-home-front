@@ -28,16 +28,20 @@ function Footer({}: Props): ReactElement {
   const { items } = footerMenu || {}
   return (
     <>
-      <div style={{borderTop:"5px solid #2898FF"}} className="flex flex-col justify-center items-center bg-purple text-white w-full px-8 py-24">
+      <div
+        style={{ borderTop: "5px solid #2898FF" }}
+        className="flex flex-col justify-center items-center bg-purple text-white w-full px-8 py-24"
+      >
         <div className="max-w-1366 mx-auto w-full flex flex-col md:flex-row flex-wrap">
           <div className="w-full md:w-1/3">
             <div className="mb-2 flex justify-center md:justify-start">
               <img src={require("@images/logo-footer.svg")} />
             </div>
             <div className="text-sm text-gray-400 text-center md:text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua ut
-              aliquip ex ea
+              Kickstarted in 2018, with an idea in mind to help industries in
+              various sectors build a solid and consistent platform to gain YoY
+              profits with the help of proven marketing strategies (built
+              in-house).
             </div>
           </div>
           <div className="md:pl-16 md:w-1/3">

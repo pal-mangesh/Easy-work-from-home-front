@@ -3,6 +3,9 @@ import Heading from "@components/Heading"
 import InfoGrid, { IInfoGridItem } from "@components/InfoGrid"
 import ServiceInfoStrap from "@components/ServiceInfoStrap"
 import Strap from "@components/Strap"
+import AboutUsStrap from "@hoc/AboutUsStrap"
+import ReachOutBox from "@hoc/ReachOutBox"
+import { navigate } from "gatsby"
 import React, { ReactElement } from "react"
 
 interface Props {}
@@ -13,22 +16,22 @@ function ResearchAndDevelopmentContainer({}: Props): ReactElement {
       title: "Build-up a Strategy",
       subTitle:
         "Most businesses fail wihtout a good one! Strategy building seems scary to hear as a word but is the utmost important  step in the initial phase. ReactiveMarkerting makes sure that you have a sound strategy to tackle major challenges on the road to success of your company!",
-      linkText: "Read More",
-      link: "/research-and-planning",
+      // linkText: "Read More",
+      // link: "/research-and-planning",
     },
     {
       title: "Make an Action Plan",
       subTitle:
         "Divide the strategy into a collectiive action plan. constituting categorized actions to be performed by various teams, on a correct schedule. We ensure, each step taken contributes to the overall success!",
-      linkText: "Read More",
-      link: "/research-and-planning",
+      // linkText: "Read More",
+      // link: "/research-and-planning",
     },
     {
       title: "Careful Execution",
       subTitle:
         "Despite our simplification of the term strategy, there’s no doubt it can be difficult to get started building one. We should perceive what a digital marketing campaign looks like, and then, we’ll jump into those seven building blocks to help you create an effective digital marketing strategy to set up your business for online success.",
-      linkText: "Read More",
-      link: "/research-and-planning",
+      // linkText: "Read More",
+      // link: "/research-and-planning",
     },
   ]
 
@@ -103,7 +106,7 @@ function ResearchAndDevelopmentContainer({}: Props): ReactElement {
               </h3>
             </div>
             <div className="mt-8 w-1/2 md:w-1/3 mx-auto">
-              <Button type="secondary">Contact Us</Button>
+              <Button type="secondary" onClick={()=>navigate("/contact")}>Contact Us</Button>
             </div>
           </div>
         </Strap>
@@ -139,6 +142,8 @@ function ResearchAndDevelopmentContainer({}: Props): ReactElement {
           ))}
         </div>
       </div>
+      <AboutUsStrap/>
+      <ReachOutBox/>
     </>
   )
 }

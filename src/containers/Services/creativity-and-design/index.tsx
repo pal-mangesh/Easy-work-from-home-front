@@ -3,6 +3,9 @@ import Heading from "@components/Heading"
 import InfoGrid, { IInfoGridItem } from "@components/InfoGrid"
 import ServiceInfoStrap from "@components/ServiceInfoStrap"
 import Strap from "@components/Strap"
+import AboutUsStrap from "@hoc/AboutUsStrap"
+import ReachOutBox from "@hoc/ReachOutBox"
+import { navigate } from "gatsby"
 import React, { ReactElement } from "react"
 
 interface Props {}
@@ -62,7 +65,7 @@ function CreativityAndDesignContainer({}: Props): ReactElement {
         className="w-full bg-cover bg-center bg-no-repeat"
       >
         <div className="max-w-1366 mx-auto py-16 px-8 md:px-0">
-          <ServiceInfoStrap title="DESIGN & <br/>CREATIVITY">
+          <ServiceInfoStrap title="CREATIVITY <br/> & DESIGN">
             <span>
               How do you translate business needs into analytics strategies?
               ReactiveMarketing has an unique approach to Creating consistent,
@@ -91,7 +94,7 @@ function CreativityAndDesignContainer({}: Props): ReactElement {
               </h3>
             </div>
             <div className="mt-8 w-1/2 md:w-1/3 mx-auto">
-              <Button type="secondary">Contact Us</Button>
+              <Button type="secondary" onClick={()=>navigate("/contact")}>Contact Us</Button>
             </div>
           </div>
         </Strap>
@@ -127,6 +130,8 @@ function CreativityAndDesignContainer({}: Props): ReactElement {
           ))}
         </div>
       </div>
+      <AboutUsStrap/>
+      <ReachOutBox/>
     </>
   )
 }

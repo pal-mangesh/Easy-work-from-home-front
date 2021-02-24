@@ -2,8 +2,11 @@ import Button from "@components/Button"
 import InfoGrid from "@components/InfoGrid"
 import SlickSlider from "@components/Slick"
 import Strap from "@components/Strap"
+import AboutUsStrap from "@hoc/AboutUsStrap"
+import CommonStrap from "@hoc/CommonStrap"
 import Grid from "@hoc/GridDisplay"
 import Image from "@hoc/Image"
+import ReachOutBox from "@hoc/ReachOutBox"
 import SearchBar from "@hoc/SearchBar"
 import Testimonials from "@hoc/Testimonials"
 import CommonUtils from "@utils/CommonUtils"
@@ -45,23 +48,17 @@ function HomeContainer(): ReactElement {
     {
       title: "Research & Analyze the market",
       subTitle:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad",
-      link: "#",
-      linkText: "Read More",
+        "Considering every aspect of the market and keeping a close eye on the current market trends! Thoughtful selection of market strategies puts us ahead of others!",
     },
     {
       title: "Preplan & prepare best strategy",
       subTitle:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad",
-      link: "#",
-      linkText: "Read More",
+        "We curate the best strategy suited for your business. Dedicated research and thourough examination of proven strategies help us come up with one!",
     },
     {
       title: "Execute, Monitor, Enhance & grow!",
       subTitle:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad",
-      link: "#",
-      linkText: "Read More",
+        "Carefull execution and continous interaction among our stakeholders ensures the outcome to be what is expected!",
     },
   ]
 
@@ -95,36 +92,36 @@ function HomeContainer(): ReactElement {
 
   const testimonials = [
     {
-      imageURL: require("@images/dummy-dp.png"),
-      author: "Mellisa",
+      imageURL: require("@images/eli-dp.png"),
+      author: "Eli",
       comment:
-        "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore euismod magna laoreet dolore.”",
+        "“Wanted to update our tech stack to the match the latest trends. You guys made it a breeeze!”",
       title: "Founder",
-      subTitle: "Sigma Solutions Ltd.",
+      subTitle: "MadisonL",
     },
     {
       imageURL: require("@images/dummy-dp.png"),
       author: "Mellisa",
       comment:
-        "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore euismod magna laoreet dolore.”",
+        "“Helped our company's revenue grow by 12%! These guys are now marked under my top 10 recommendations list. ”",
       title: "Founder",
-      subTitle: "Sigma Solutions Ltd.",
+      subTitle: "Props Mart LLC.",
     },
     {
-      imageURL: require("@images/dummy-dp.png"),
-      author: "Mellisa",
+      imageURL: require("@images/rahul-dp.png"),
+      author: "Rahul",
       comment:
-        "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore euismod magna laoreet dolore.”",
+        "“Experienced team, helped me with real estate lead generation. Satisifed so far!”",
       title: "Founder",
-      subTitle: "Sigma Solutions Ltd.",
+      subTitle: "Marketise.ca",
     },
     {
-      imageURL: require("@images/dummy-dp.png"),
-      author: "Mellisa",
+      imageURL: require("@images/saurabh-dp.png"),
+      author: "Saurabh",
       comment:
-        "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore euismod magna laoreet dolore.”",
+        "“Wanted my business to have online presence in less time. Got better than what I expected!”",
       title: "Founder",
-      subTitle: "Sigma Solutions Ltd.",
+      subTitle: "Stock Pack Investments.",
     },
   ]
 
@@ -144,21 +141,6 @@ function HomeContainer(): ReactElement {
     {
       imageURL: require("@images/smiley-icon.svg"),
       title: "Customer Satisfaction",
-    },
-  ]
-
-  const contactInfo = [
-    {
-      imageURL: require("@images/location-blue-icon.svg"),
-      title: "WZ-3339 Mahindra Park, Near Fountain Chowk, Delhi - 110034",
-    },
-    {
-      imageURL: require("@images/phone-blue-icon.svg"),
-      title: "+1-123-123-123",
-    },
-    {
-      imageURL: require("@images/mail-blue-icon.svg"),
-      title: "touch@reactivemarketing.in",
     },
   ]
 
@@ -245,7 +227,7 @@ function HomeContainer(): ReactElement {
                 </span>
               </div>
               <div className="my-8 mx-auto w-1/2 md:w-1/3">
-                <Button type="primary">Get Started</Button>
+                <Button type="primary" onClick={()=>navigate("/contact")}>Get Started</Button>
               </div>
               <div className="flex items-center justify-center mt-8 md:mt-24">
                 <img src={require("@images/logo-cube.svg")} />
@@ -278,42 +260,23 @@ function HomeContainer(): ReactElement {
                 Versatile IT & Marketing Experts
               </h3>
               <h5 className="my-4">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore euismod
-                magna laoreet dolore. Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet dolore euismod magna laoreet dolore.
+                Our team of skillfull experts is here to help you with
+                exponential growth of your business and fast track the profit
+                generation, so you can focus on shaping your firm for a better
+                future market presence. We believe that to achieve big
+                milestones, we need to be well prepared to tackle any risk or
+                challenges on the way to success while having
+                future-sightedness.
               </h5>
               <div className="my-8 w-1/2 md:w-1/3 mx-auto">
-                <Button>Get Started</Button>
+                <Button onClick={()=>navigate("/contact")}>Get Started</Button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <Strap
-        className="bg-purple text-white"
-        bg={require("@images/strap-bg-2.svg")}
-      >
-        <div className="w-full md:w-1/4 text-center my-8 md:my-0">
-          <h3 className="text-xl font-bold">50+</h3>
-          <h5 className="text-xs">Projects Delivered</h5>
-        </div>
-        <div className="w-full md:w-1/4 text-center my-8 md:my-0">
-          <h3 className="text-xl font-bold">5000+</h3>
-          <h5 className="text-xs">Cups of Coffee</h5>
-        </div>
-        <div className="w-full md:w-1/4 text-center my-8 md:my-0">
-          <h3 className="text-xl font-bold">15000+</h3>
-          <h5 className="text-xs">Work Hours</h5>
-        </div>
-        <div className="w-full md:w-1/4 text-center my-8 md:my-0">
-          <div className="w-2/3 mx-auto">
-            <Button type="secondary">Contact Us</Button>
-          </div>
-        </div>
-      </Strap>
+      <AboutUsStrap />
 
       <div
         style={{
@@ -369,7 +332,7 @@ function HomeContainer(): ReactElement {
               </h5>
               <div className="flex justify-center md:justify-start">
                 <div className="w-1/2">
-                  <Button>Read More</Button>
+                  <Button onClick={()=>navigate("/services")}>Read More</Button>
                 </div>
               </div>
             </div>
@@ -421,19 +384,24 @@ function HomeContainer(): ReactElement {
                 <SlickSlider settings={sliderSettings}>
                   {testimonials.map((t: any) => (
                     <>
-                      <div className="p-4 flex justify-center items-center ">
-                        <div className="text-center bg-white shadow-lg rounded-lg p-8">
-                          <div className="flex justify-center">
-                            <img
-                              style={{ width: "64px", height: "64px" }}
-                              src={t.imageURL}
-                            />
-                          </div>
-                          <div className="font-bold py-2">{t.author}</div>
-                          <div className="text-justify">{t.comment}</div>
-                          <div className="">{t.title}</div>
-                          <div className="text-gray-400 text-xs">
-                            {t.subTitle}
+                      <div
+                        className="p-4 flex justify-center items-stretch relative "
+                        style={{ height: "300px" }}
+                      >
+                        <div className="absolute bottom-2 left-2 top-2 right-2 text-center bg-white shadow-lg rounded-lg px-8 overflow-y-auto">
+                          <div className="">
+                            <div className="flex justify-center">
+                              <img
+                                style={{ width: "64px", height: "64px" }}
+                                src={t.imageURL}
+                              />
+                            </div>
+                            <div className="font-bold py-2">{t.author}</div>
+                            <div className="text-justify">{t.comment}</div>
+                            <div className="pt-4">{t.title}</div>
+                            <div className="text-gray-400 text-xs">
+                              {t.subTitle}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -448,46 +416,8 @@ function HomeContainer(): ReactElement {
         </div>
       </div>
 
-      <Strap className="bg-blue-500">
-        <div className="px-4 md:px-0 text-center">
-          <div>
-            <h3 className="text-2xl font-bold text-white">
-              Deliver Great Experiences. Grow Faster. Start Today!
-            </h3>
-          </div>
-          <div className="mt-8 w-1/2 md:w-1/3 mx-auto">
-            <Button type="secondary">Contact Us</Button>
-          </div>
-        </div>
-      </Strap>
-
-      <div
-        className="py-24 bg-cover bg-no-repeat bg-center"
-        style={{
-          backgroundImage: `url(${require("@images/home-contact-us-bg.png")})`,
-        }}
-      >
-        <div className="max-w-1366 mx-auto flex justify-center items-center text-white">
-          <div>
-            <div className="text-center">
-              <h3 className="text-2xl font-bold">How to reach us out?</h3>
-              <h5 className="py-2">Not too close, not too far!</h5>
-            </div>
-            <div className="py-4">
-              <div className="flex flex-col md:flex-row px-8">
-                {contactInfo.map((ci: any) => (
-                  <>
-                    <div className="p-4 flex flex-col items-center w-full md:w-1/3">
-                      <img src={ci.imageURL} />
-                      <span className="py-8">{ci.title}</span>
-                    </div>
-                  </>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CommonStrap />
+      <ReachOutBox />
     </div>
   )
 }

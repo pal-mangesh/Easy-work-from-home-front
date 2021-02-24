@@ -3,6 +3,9 @@ import Heading from "@components/Heading"
 import InfoGrid, { IInfoGridItem } from "@components/InfoGrid"
 import ServiceInfoStrap from "@components/ServiceInfoStrap"
 import Strap from "@components/Strap"
+import AboutUsStrap from "@hoc/AboutUsStrap"
+import ReachOutBox from "@hoc/ReachOutBox"
+import { navigate } from "gatsby"
 import React, { ReactElement } from "react"
 
 interface Props {}
@@ -44,6 +47,18 @@ function BrandingAndMarketingContainer({}: Props): ReactElement {
       subTitle:
         "If you are new in digital advertising, we can work with you from scratch, identifying which advertising networks are best for your business. We can also easily step in and improve upon any existing campaigns on the Google AdWords Platform, Bing Ads, Facebook, and others.",
       imageURL: require("@images/bnm-campaign-icon.svg"),
+    },
+    {
+      title: "LEAD GENERATION",
+      subTitle:
+        "We help our clients increase their YoY revenues, by exposing them to more and more targeted customers via our strategised and proven lead generation methods!",
+      imageURL: require("@images/bnm-leads-icon.svg"),
+    },
+    {
+      title: "COLD CALLING & MAILING",
+      subTitle:
+        "Our skillful marketing and sales team is working 24x7 to provide your with filtered and potential leads that we capture by cold calling and bulk mailing.",
+      imageURL: require("@images/bnm-coldcalls-icon.svg"),
     },
     {
       title: "CUSTOM LANDING PAGES",
@@ -103,7 +118,7 @@ function BrandingAndMarketingContainer({}: Props): ReactElement {
               </h3>
             </div>
             <div className="mt-8 w-1/2 md:w-1/3 mx-auto">
-              <Button type="secondary">Contact Us</Button>
+              <Button type="secondary" onClick={()=>navigate("/contact")}>Contact Us</Button>
             </div>
           </div>
         </Strap>
@@ -138,6 +153,8 @@ function BrandingAndMarketingContainer({}: Props): ReactElement {
             </>
           ))}
         </div>
+        <AboutUsStrap/>
+        <ReachOutBox/>
       </div>
     </>
   )

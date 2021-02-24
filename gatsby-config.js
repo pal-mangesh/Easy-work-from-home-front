@@ -1,15 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Reactive Marketring`,
+    title: `Reactive Marketing`,
     description: `Your complete digital solutions ally!`,
     author: `@gatsbyjs`,
     info: {
-      contact: "1-111-222-333",
-      email: "help@propsmart.ca",
+      contact: "+1-905-267-5595",
+      email: "help@reactivemarketing.ca",
     },
     nav: {
       logo: {
-        title: "PropsMart",
+        title: "Reactive Marketing",
       },
       menu: {
         items: [
@@ -39,10 +39,10 @@ module.exports = {
               },
             ],
           },
-          // {
-          //   title: "Sell",
-          //   href: "/sell",
-          // },
+          {
+            title: "Work",
+            href: "/portfolio",
+          },
           {
             title: "About",
             href: "/about",
@@ -64,41 +64,37 @@ module.exports = {
               href: "/",
             },
             {
-              title: "Services",
-              href: "#",
+              title: "Work",
+              href: "/portfolio",
             },
-            // {
-            //   title: "Sell",
-            //   href: "/sell",
-            // },
             {
               title: "About",
               href: "/about",
             },
-            // {
-            //   title: "Contact",
-            //   href: "/contact",
-            // },
-          ],
-        },
-        {
-          title: "Help",
-          items: [
-            {
-              title: "Privacy Policy",
-              href: "/privacy",
-            },
-            {
-              title: "FAQs",
-              href: "/faq",
-            },
-            {
-              title: "Terms & Conditions",
-              href: "/tnc",
-            },
             {
               title: "Contact",
               href: "/contact",
+            },
+          ],
+        },
+        {
+          title: "Services",
+          items: [
+            {
+              title: "Research & Planning",
+              href: "/research-and-planning",
+            },
+            {
+              title: "Tech & Data Science",
+              href: "/technology-and-data-science",
+            },
+            {
+              title: "Marketing",
+              href: "/branding-and-marketing",
+            },
+            {
+              title: "Creativity & Design",
+              href: "/creativity-and-design",
             },
             // {
             //   title: "Contact",
@@ -138,7 +134,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `docs/logo.svg`, // This path is relative to the root of the site.
+        icon: `src/images/logo.svg`, // This path is relative to the root of the site.
       },
     },
     {

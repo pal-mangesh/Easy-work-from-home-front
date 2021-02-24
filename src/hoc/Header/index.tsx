@@ -72,7 +72,7 @@ function Header({
     setLocationSelectorVisible(true)
   }
 
-  const { info={} } = data.site.siteMetadata
+  const { info = {} } = data.site.siteMetadata
 
   return (
     <>
@@ -82,10 +82,19 @@ function Header({
         }}
         className={`fixed top-0 w-full bg-white text-black   shadow-md z-50`}
       >
-        <div className="bg-black px-4 py-2 text-white">
-          <div className="w-full flex justify-end max-w-1366 mx-auto text-xs">
-            <div>Contact : {info.contact || ""}</div>
-            <div className="pl-4">Email : {info.email || ""}</div>
+        <div className="bg-black px-8 py-2 text-white">
+          <div
+            className="w-full flex justify-start md:justify-end max-w-1366 mx-auto "
+            style={{ fontSize: "8px" }}
+          >
+            <div className="flex-1 md:flex-none">
+              Contact : <br className="md:hidden" />
+              {info.contact || ""}
+            </div>
+            <div className="pl-4">
+              Email : <br className="md:hidden" />
+              {info.email || ""}
+            </div>
           </div>
         </div>
         <div className="max-w-1366 mx-auto py-4 px-8 flex items-center">
@@ -95,6 +104,7 @@ function Header({
             currentLocation={currentLocation}
           />
         </div>
+        
       </div>
     </>
   )
