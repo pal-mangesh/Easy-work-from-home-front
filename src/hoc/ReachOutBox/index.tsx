@@ -6,7 +6,7 @@ function ReachOutBox({}: Props): ReactElement {
   const contactInfo = [
     {
       imageURL: require("@images/location-blue-icon.svg"),
-      title: "CA : ",
+      title: "CA : 1210 Summit drive Unit 230, suite# 168 Kamloops, BC V2C 6M1",
     },
     {
       imageURL: require("@images/location-blue-icon.svg"),
@@ -18,7 +18,8 @@ function ReachOutBox({}: Props): ReactElement {
     },
     {
       imageURL: require("@images/phone-blue-icon.svg"),
-      title: "+1-905-267-5595",
+      // title: "+1-905-267-5595",
+      title: "+1-778-402-2950",
     },
   ]
   return (

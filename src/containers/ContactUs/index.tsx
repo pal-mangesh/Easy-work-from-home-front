@@ -12,7 +12,7 @@ function ContactUsContainer({}: Props): ReactElement {
           <iframe
             scrolling="no"
             style={{ width: "100%", height: "300px" }}
-            src="https://www.openstreetmap.org/export/embed.html?bbox=77.00141467619687%2C28.631298965657614%2C77.24689044523986%2C28.760645349035975&amp;layer=mapnik"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-120.37925720214845%2C50.65185499369506%2C-120.3329086303711%2C50.676092540077136&amp;layer=mapnik"
           ></iframe>
 
         </div>
