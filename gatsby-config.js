@@ -4,7 +4,8 @@ module.exports = {
     description: `Your complete digital solutions ally!`,
     author: `@gatsbyjs`,
     info: {
-      contact: "+1-905-267-5595",
+      // contact: "+1-905-267-5595",
+      contact: "+1-778-402-2950",
       email: "help@reactivemarketing.ca",
     },
     nav: {
