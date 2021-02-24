@@ -65,7 +65,7 @@ function HomeContainer(): ReactElement {
   const mission = {
     title: "Our Mission",
     subTitle:
-      "We are Reactive Marketing Pvt. Ltd. An IT based Marketing & Development solutions company, with our main aim to produce most performing and to-the-point digital solutions from within India.",
+      "We are Reactive Marketing,  an IT based Marketing & Development solutions company, with our main aim to produce most performing and to-the-point digital solutions.",
     points: [
       {
         text:
@@ -210,7 +210,7 @@ function HomeContainer(): ReactElement {
           <div className="pb-48 flex justify-center ">
             <div className="text-center md:mt-24 mt-16">
               <div className="my-4">
-                <span>We are, Reactive Marketing Pvt. Ltd.</span>
+                <span>We are, Reactive Marketing</span>
               </div>
               <div
                 className="py-4"
@@ -227,7 +227,9 @@ function HomeContainer(): ReactElement {
                 </span>
               </div>
               <div className="my-8 mx-auto w-1/2 md:w-1/3">
-                <Button type="primary" onClick={()=>navigate("/contact")}>Get Started</Button>
+                <Button type="primary" onClick={() => navigate("/contact")}>
+                  Get Started
+                </Button>
               </div>
               <div className="flex items-center justify-center mt-8 md:mt-24">
                 <img src={require("@images/logo-cube.svg")} />
@@ -263,13 +265,17 @@ function HomeContainer(): ReactElement {
                 Our team of skillfull experts is here to help you with
                 exponential growth of your business and fast track the profit
                 generation, so you can focus on shaping your firm for a better
-                future market presence. We believe that to achieve big
-                milestones, we need to be well prepared to tackle any risk or
-                challenges on the way to success while having
-                future-sightedness.
+                future market presence. We deliver various services to our
+                clients like SEO, Paid Marketing, Social Media Marketing, Lead
+                Generation, Softwares/Websites/Webapps Development and other IT
+                services. We believe that to achieve big milestones, we need to
+                be well prepared to tackle any risk or challenges on the way to
+                success while having future-sightedness.
               </h5>
               <div className="my-8 w-1/2 md:w-1/3 mx-auto">
-                <Button onClick={()=>navigate("/contact")}>Get Started</Button>
+                <Button onClick={() => navigate("/contact")}>
+                  Get Started
+                </Button>
               </div>
             </div>
           </div>
@@ -332,7 +338,9 @@ function HomeContainer(): ReactElement {
               </h5>
               <div className="flex justify-center md:justify-start">
                 <div className="w-1/2">
-                  <Button onClick={()=>navigate("/services")}>Read More</Button>
+                  <Button onClick={() => navigate("/services")}>
+                    Read More
+                  </Button>
                 </div>
               </div>
             </div>
