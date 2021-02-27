@@ -144,6 +144,34 @@ function HomeContainer(): ReactElement {
     },
   ]
 
+  const processPoints = [
+    {
+      title: "01 BOARDING",
+      description:
+        "A requierment analysis session is conducted to get the priorites straight with our clients. We expose our clients to a clear picture of ideal customer.",
+    },
+    {
+      title: "02 PLANNING",
+      description:
+        "We prepare a complete 360 marketing plan specifically catering to our client needs. A thourough plan is generated after branstorming sessions with our clients.",
+    },
+    {
+      title: "03 AD CAMPAIGN",
+      description:
+        "We create attractive and engaging ad copies that target ideal customers for our clients. Our skillful marketing experts spread the ad copies in the form of photos, posts, videos etc on majority of the paid marketing and social media platforms.",
+    },
+    {
+      title: "04 LEAD GENERATION",
+      description:
+        "We forward, the pre-qualified generated leads, from multiple platforms, to our real-estate and mortgage clients. ",
+    },
+    {
+      title: "05 FOLLOW UPS",
+      description:
+        "We continously follow-up with our generated leads through various media like SMS, EMAILS, Calls, Social Messaging etc and multiple other touch points to increase the potential of conversion.",
+    },
+  ]
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -210,7 +238,10 @@ function HomeContainer(): ReactElement {
           <div className="pb-48 flex justify-center ">
             <div className="text-center md:mt-24 mt-16">
               <div className="my-4">
-                <span>We are, Reactive Marketing</span>
+                <span>
+                  100% Genuine Pre-Qualified, potentially convertable leads,
+                  every month
+                </span>
               </div>
               <div
                 className="py-4"
@@ -278,6 +309,52 @@ function HomeContainer(): ReactElement {
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="my-32 max-w-1366 mx-auto">
+        <div className="w-3/4 mx-auto text-center mb-8">
+          <h1 className="text-lg font-bold mb-2">
+            One-Stop Shop for your all Mortgage & Real Estate Customer Needs
+          </h1>
+          <h3 className="text-sm ">
+            We specialize in Real Estate Marketing and Mortgage Lead Generation.
+            Get a glimps of our end-to-end process
+          </h3>
+        </div>
+        <div className="w-1/2 mx-auto">
+          <div className="flex flex-col">
+            {processPoints.map((pp: any, index: number) => (
+              <>
+                <div
+                  className={`flex flex-col md:flex-row ${
+                    index % 2 === 0 ? "" : "md:flex-row-reverse"
+                  } items-center text-center my-8`}
+                >
+                  <div className="flex-shrink-0 w-full md:w-1/4 my-2 md:my-0 ">
+                    <h1 className="text-xl font-bold ">{pp.title}</h1>
+                  </div>
+                  <div>
+                    <h1 className="text-xs ">{pp.description}</h1>
+                  </div>
+                </div>
+                <div className="md:block hidden w-3/4 mx-auto">
+                  {index < processPoints.length - 1 ? (
+                    <img
+                      className="w-full"
+                      src={
+                        index % 2 === 0
+                          ? require("@images/process-divider.svg")
+                          : require("@images/process-divider-o.svg")
+                      }
+                    />
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </>
+            ))}
           </div>
         </div>
       </div>
