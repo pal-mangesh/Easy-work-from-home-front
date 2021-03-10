@@ -4,12 +4,15 @@ import ApplicationFormFull, {
 } from "@hoc/ApplicationForm"
 import ContactForm from "@hoc/ContactFrom"
 import ReachOutBox from "@hoc/ReachOutBox"
+import Network from "@utils/Network"
 import React, { ReactElement } from "react"
 
 interface Props {}
 
 function ContactUsContainer({}: Props): ReactElement {
   const [formData, setFormData] = React.useState({} as any)
+  const [loading, setLoading] = React.useState(false)
+  const [submitted, setSubmitted] = React.useState(false)
 
   const schema: IFormSchema[] = [
     {
@@ -45,14 +48,14 @@ function ContactUsContainer({}: Props): ReactElement {
           label: "Name*",
           name: "name",
           type: "input",
-          placeholder:"Full Name",
+          placeholder: "Full Name",
           validation: "required",
         },
         {
           label: "Email*",
           name: "email",
           type: "input",
-          placeholder:"Quote will be dispatched to this email!",
+          placeholder: "Quote will be dispatched to this email!",
           validation: "required",
         },
         {
@@ -86,8 +89,22 @@ function ContactUsContainer({}: Props): ReactElement {
     }
   }
 
-  const handleSubmit = (data: any) => {
-    console.log(data)
+  const handleSubmit = async (form: any) => {
+    setLoading(true)
+    try {
+      const { email } = form
+      const { data } = await Network.post("eusers/register", {
+        email,
+        entity: form,
+      })
+      if (data === "OK") {
+        setSubmitted(true)
+      }
+    } catch (e) {
+      console.error(e)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -113,13 +130,41 @@ function ContactUsContainer({}: Props): ReactElement {
             successMessage=" Successfully submitted! We will get in touch with you very soon!"
             reason="from contact-us page"
           /> */}
-          <div className="mb-16">
+          <div className="mb-16 relative">
             {/* {JSON.stringify(formData)} */}
-            <ApplicationFormFull
-              onSubmit={handleSubmit}
-              onChange={handleFormChange}
-              schema={schema}
-            />
+            {submitted ? (
+              <>
+                <div className="text-center my-16">
+                  <h1 className="font-bold text-2xl text-green-700 mb-4">
+                    SUCCESS!
+                  </h1>
+                  <h1 className="font-bold ">
+                    Your query has been received at our end! One of our experts
+                    will get in touch with you soon!
+                  </h1>
+                </div>
+              </>
+            ) : (
+              <>
+                {loading ? (
+                  <>
+                    <div
+                      className="absolute w-full h-full z-10 flex items-center justify-center"
+                      style={{ backgroundColor: "rgba(255,255,255,0.7)" }}
+                    >
+                      <h1 className="font-bold text-2xl">Sending query...</h1>
+                    </div>
+                  </>
+                ) : (
+                  ""
+                )}
+                <ApplicationFormFull
+                  onSubmit={handleSubmit}
+                  onChange={handleFormChange}
+                  schema={schema}
+                />
+              </>
+            )}
           </div>
           {/* <div className="text-center pt-8">OR</div>
           <div className="px-4 my-4">

@@ -82,13 +82,13 @@ function PortfolioContainer({}: Props): ReactElement {
       link: "https://www.webwibez.in",
       linkText: "https://www.webwibez.in",
     },
-    {
-      title: "NotFall Kredit",
-      subTitle: "Fintech Firm",
-      imgURL: require("@images/notfall-kredit-img.png"),
-      link: "https://www.notfallkre-dit.de",
-      linkText: "https://www.notfallkre-dit.de",
-    },
+    // {
+    //   title: "NotFall Kredit",
+    //   subTitle: "Fintech Firm",
+    //   imgURL: require("@images/notfall-kredit-img.png"),
+    //   link: "https://www.notfallkre-dit.de",
+    //   linkText: "https://www.notfallkre-dit.de",
+    // },
     {
       title: "Car-Hire",
       subTitle: "Car Rental Company",
@@ -96,13 +96,13 @@ function PortfolioContainer({}: Props): ReactElement {
       link: "https://awesome-bardeen-68648d.netlify.app/",
       linkText: "Website",
     },
-    {
-      title: "Blitz Kredit",
-      subTitle: "Financial Solutions Firm",
-      imgURL: require("@images/blitz-kredit-img.png"),
-      link: "https://www.blitzkre-dit.de",
-      linkText: "https://www.blitzkre-dit.de",
-    },
+    // {
+    //   title: "Fast Credit",
+    //   subTitle: "Financial Solutions Firm",
+    //   imgURL: require("@images/blitz-kredit-img.png"),
+    //   // link: "#",
+    //   // linkText: "",
+    // },
   ]
 
   return (
