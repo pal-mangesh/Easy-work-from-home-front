@@ -21,7 +21,7 @@ function InfoGrid({ items, bgTextColor = "text-black" }: Props): ReactElement {
           <div className="px-4 py-8 md:py-4 w-full md:w-1/3 relative">
             <span
               className={
-                "text-6xl absolute font-bold  opacity-20 " + bgTextColor
+                "text-6xl absolute font-bold  opacity-10 " + bgTextColor
               }
               style={{ zIndex: 0, top: "10px" }}
             >

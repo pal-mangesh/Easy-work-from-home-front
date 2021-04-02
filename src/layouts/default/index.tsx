@@ -35,7 +35,7 @@ function DefaultLayout({
           {title}
           {pageTitle ? ` :: ${pageTitle}` : ""}
         </title>
-        <script type="text/javascript">
+        {/* <script type="text/javascript">
           {`
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
@@ -47,13 +47,13 @@ function DefaultLayout({
         s0.parentNode.insertBefore(s1,s0);
         })();
         `}
-        </script>
+        </script> */}
       </HelmetContainer>
       <div>
-        <Header safeAreaPadding="120px" />
+        <Header safeAreaPadding="0px" />
         <SingleSignOn />
 
-        <div style={{ paddingTop: "120px" }} className="min-h-screen">
+        <div  className="min-h-screen">
           {children}
         </div>
         <Footer />

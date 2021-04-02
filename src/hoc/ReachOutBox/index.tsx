@@ -4,23 +4,23 @@ interface Props {}
 
 function ReachOutBox({}: Props): ReactElement {
   const contactInfo = [
+    // {
+    //   imageURL: require("@images/location-blue-icon.svg"),
+    //   title: "CA : 1210 Summit drive Unit 230, suite# 168 Kamloops, BC V2C 6M1",
+    // },
     {
       imageURL: require("@images/location-blue-icon.svg"),
-      title: "CA : 1210 Summit drive Unit 230, suite# 168 Kamloops, BC V2C 6M1",
-    },
-    {
-      imageURL: require("@images/location-blue-icon.svg"),
-      title: "UK : 71-75, Shelton Street, Covent Garden, London, WC2H 9JQ, UNITED KINGDOM.",
+      title: "US : 925 Rose Ln Hatfield, Pennsylvania(PA), 19440",
     },
     {
       imageURL: require("@images/mail-blue-icon.svg"),
-      title: "help@reactivemarketing.ca",
+      title: "help@easy-workfromhome.com",
     },
-    {
-      imageURL: require("@images/phone-blue-icon.svg"),
-      // title: "+1-905-267-5595",
-      title: "+1-778-402-2950",
-    },
+    // {
+    //   imageURL: require("@images/phone-blue-icon.svg"),
+    //   // title: "+1-905-267-5595",
+    //   title: "+1-123-456-7890",
+    // },
   ]
   return (
     <div>
@@ -37,7 +37,7 @@ function ReachOutBox({}: Props): ReactElement {
               <h5 className="py-2">Not too close, not too far!</h5>
             </div>
             <div className="py-4">
-              <div className="flex flex-col md:flex-row px-8">
+              <div className="flex flex-col md:flex-row justify-center px-8">
                 {contactInfo.map((ci: any) => (
                   <>
                     <div className="p-4 flex flex-col items-center text-center w-full md:w-1/3">

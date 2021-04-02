@@ -1,16 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Reactive Marketing`,
-    description: `Your complete digital solutions ally!`,
+    title: `EASY WORK FROM HOME`,
+    description: `WORK FROM THE COMFORT OF YOUR HOME... MAKE BIG PROFITS!`,
     author: `@gatsbyjs`,
     info: {
       // contact: "+1-905-267-5595",
-      contact: "+1-778-402-2950",
-      email: "help@reactivemarketing.ca",
+      contact: "+1-123-456-7890",
+      email: "help@easy-workfromhome.com",
     },
     nav: {
       logo: {
-        title: "Reactive Marketing",
+        title: "EASY WORK FROM HOME",
       },
       menu: {
         items: [
@@ -19,34 +19,8 @@ module.exports = {
             href: "/",
           },
           {
-            title: "Services",
-            href: "/services",
-            items: [
-              {
-                title: "Research & Planning",
-                href: "/research-and-planning",
-              },
-              {
-                title: "Technology & Data Science",
-                href: "/technology-and-data-science",
-              },
-              {
-                title: "Branding & Marketing",
-                href: "/branding-and-marketing",
-              },
-              {
-                title: "Creativity & Design",
-                href: "/creativity-and-design",
-              },
-            ],
-          },
-          {
-            title: "Work",
-            href: "/portfolio",
-          },
-          {
-            title: "About",
-            href: "/about",
+            title: "Get Started",
+            href: "/register",
           },
           {
             title: "Contact",
@@ -64,9 +38,10 @@ module.exports = {
               title: "Home",
               href: "/",
             },
+
             {
-              title: "Work",
-              href: "/portfolio",
+              title: "Apply Now",
+              href: "/register",
             },
             {
               title: "About",
@@ -79,30 +54,23 @@ module.exports = {
           ],
         },
         {
-          title: "Services",
+          title: "Info",
           items: [
             {
-              title: "Research & Planning",
-              href: "/research-and-planning",
+              title: "Privacy",
+              href: "/",
             },
             {
-              title: "Tech & Data Science",
-              href: "/technology-and-data-science",
+              title: "Terms",
+              href: "/portfolio",
             },
             {
-              title: "Marketing",
-              href: "/branding-and-marketing",
+              title: "FAQs",
+              href: "/about",
             },
-            {
-              title: "Creativity & Design",
-              href: "/creativity-and-design",
-            },
-            // {
-            //   title: "Contact",
-            //   href: "/contact",
-            // },
           ],
         },
+        //
       ],
     },
   },

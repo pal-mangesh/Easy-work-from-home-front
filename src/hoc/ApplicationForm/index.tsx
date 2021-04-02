@@ -20,7 +20,7 @@ export interface IFormField {
   spread?: boolean
   placeholder?: string
   prefix?: string
-  validation?: "required" | "dob" | "email" | "length"
+  validation?: "required" | "dob" | "email" | "length" | "phone"
   minLength?: number
   defaultValue?: any
   multiSelect?: boolean
@@ -31,6 +31,8 @@ export interface IFormSchema {
   title: string
   fields: IFormField[]
   type?: "input" | "confirm"
+  onNext?: any
+  nextText?: string
 }
 
 interface Props {
@@ -40,6 +42,9 @@ interface Props {
   onNext?: Function
   showConfirmation?: boolean
   headline?: string
+  data?: any
+  disabled?: boolean
+  loading?: boolean
 }
 
 function ApplicationFormFull({
@@ -48,6 +53,8 @@ function ApplicationFormFull({
   onSubmit,
   showConfirmation,
   headline,
+  disabled,
+  loading,
 }: Props): ReactElement {
   const [currentField, setCurrentField] = React.useState(0)
   const [localData, setLocalData] = React.useState({} as any)
@@ -57,19 +64,19 @@ function ApplicationFormFull({
       let updatedData: any = {}
       for (let stage of schema) {
         for (let field of stage.fields) {
-          if (field.items && field.items.length) {
-            updatedData = {
-              ...updatedData,
-              [field.name]: field.multiSelect
-                ? [field.items[0].value]
-                : field.items[0].value,
-            }
-          } else {
-            updatedData = {
-              ...updatedData,
-              [field.name]: field.defaultValue || "",
-            }
+          // if (field.items && field.items.length) {
+          //   updatedData = {
+          //     ...updatedData,
+          //     [field.name]: field.multiSelect
+          //       ? [field.items[0].value]
+          //       : field.items[0].value,
+          //   }
+          // } else {
+          updatedData = {
+            ...updatedData,
+            [field.name]: field.defaultValue || "",
           }
+          // }
         }
       }
       setLocalData({ ...updatedData })
@@ -77,7 +84,7 @@ function ApplicationFormFull({
         onChange({ ...updatedData })
       }
     }
-  }, [])
+  }, [schema])
 
   const validate = (data: any, fields: IFormField[]) => {
     const _errors: any = {}
@@ -97,6 +104,20 @@ function ApplicationFormFull({
           const matched = re.test(val.toLowerCase())
           if (!matched) {
             _errors[field.name] = "Please provide correct Email-ID!"
+          }
+          break
+        case "phone":
+          if (
+            !val ||
+            val.length < (field.minLength || 10) ||
+            val === "" ||
+            !/^[0-9]*$/.test(val)
+          ) {
+            _errors[
+              field.name
+            ] = `Please provide correct phone number! (min : ${
+              field.minLength || 10
+            })`
           }
           break
         case "length":
@@ -126,6 +147,11 @@ function ApplicationFormFull({
     if (!validate(localData, schema[currentField].fields)) {
       return
     }
+
+    if (schema[currentField].onNext) {
+      schema[currentField].onNext(localData)
+    }
+
     if (currentField >= schema.length - 1) {
       submitForm(localData)
       return
@@ -165,14 +191,24 @@ function ApplicationFormFull({
   return (
     <>
       {schema && schema.length ? (
-        <div className="px-8 bg-white   md:mx-0 mx-4  rounded-lg">
+        <div className="px-8 bg-white py-4  md:mx-0 mx-4  rounded-lg relative">
+          {loading ? (
+            <div
+              className="rounded-lg absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center"
+              style={{ backgroundColor: "rgba(255,255,255,0.8)", zIndex: 1 }}
+            >
+              <h3 className="text-2xl font-bold"> Loading ...</h3>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="mb-8">
-            <h3 className="text-2xl text-blue-800 font-bold text-center md:text-left">
+            <h3 className="text-xl text-blue-800 font-bold text-center md:text-left">
               {headline}
             </h3>
           </div>
           <div className="block md:hidden mb-4">
-            <h3 className="font-bold text-2xl">{schema[currentField].title}</h3>
+            <h3 className="font-bold text-xl">{schema[currentField].title}</h3>
           </div>
           {schema && currentField < schema.length ? (
             <div className="flex w-full mb-8">
@@ -182,7 +218,7 @@ function ApplicationFormFull({
                     <div className={"mb-4 hidden md:block"}>
                       <h3
                         className={
-                          "font-bold text-2xl " +
+                          "font-bold text-lg " +
                           (index < currentField
                             ? "text-green-300 opacity-25"
                             : index === currentField
@@ -235,7 +271,7 @@ function ApplicationFormFull({
                         id={"FORM_FIELD_" + field.name}
                         className={` mb-8 w-full md:w-1/2 md:px-2 ${field.wrapperClass}`}
                       >
-                        <h3 className="text-lg font-bold block text-left">
+                        <h3 className=" font-bold block text-left">
                           {field.label}
                         </h3>
                         <div
@@ -335,20 +371,23 @@ function ApplicationFormFull({
                 title="Back"
                 onClick={handleOnBack}
               /> */}
-              <div
+              <button
+                disabled={disabled}
                 onClick={handleOnBack}
-                className="bg-gray-200 px-8 md:px-24 py-4 rounded text-center  hover:bg-gray-100 cursor-pointer"
+                className="bg-gray-200 px-8 w-full md:px-24 py-4 rounded text-center  hover:bg-gray-100 cursor-pointer"
               >
                 Back
-              </div>
+              </button>
             </div>
             <div className=" flex-1 md:flex-none ">
-              <div
+              <button
+                disabled={disabled}
                 onClick={handleOnNext}
-                className="bg-blue-700 md:px-24 py-4 rounded text-center text-white hover:bg-blue-500 cursor-pointer"
+                className="bg-blue-700 md:px-24 w-full py-4 rounded text-center text-white hover:bg-blue-500 cursor-pointer"
               >
-                {currentField >= schema.length - 1 ? "SUBMIT" : "Next"}
-              </div>
+                {schema[currentField].nextText ||
+                  (currentField >= schema.length - 1 ? "SUBMIT" : "Next")}
+              </button>
               {/* <Button
               className="w-full shadow-xl text-center "
               showShadow={false}

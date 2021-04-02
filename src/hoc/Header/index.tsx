@@ -21,6 +21,9 @@ function Header({
     false
   )
 
+  const [scrolled, setScrolled] = React.useState(false)
+  const ele = React.useRef(null as any)
+
   const data = useStaticQuery(graphql`
     query TopBarQuery {
       site {
@@ -52,8 +55,23 @@ function Header({
         console.error(e)
       }
     }
+
+    // setTimeout(() => setEle(document.getElementById("HEADER_BG")), 500)
+    document.addEventListener("scroll", scrollListener)
+    return () => {
+      document.removeEventListener("scroll", scrollListener)
+    }
   }, [])
 
+  const scrollListener = (e: any) => {
+    if (window.scrollY > 0) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+
+    if (ele && ele.current) ele.current.style.opacity = window.scrollY / 50 + ""
+  }
   const onLocationSelectorHidden = () => {
     if (!currentLocation || currentLocation === "") {
     } else {
@@ -80,31 +98,24 @@ function Header({
         style={{
           height: safeAreaPadding,
         }}
-        className={`fixed top-0 w-full bg-white text-black   shadow-md z-50`}
+        className={`fixed top-0 w-full  text-black   shadow-md z-50`}
       >
-        <div className="bg-black px-8 py-2 text-white">
+        <div className={` px-4 md:px-0 relative`}>
           <div
-            className="w-full flex justify-start md:justify-end max-w-1366 mx-auto "
-            style={{ fontSize: "8px" }}
-          >
-            <div className="flex-1 md:flex-none">
-              Contact : <br className="md:hidden" />
-              {info.contact || ""}
-            </div>
-            <div className="pl-4">
-              Email : <br className="md:hidden" />
-              {info.email || ""}
-            </div>
+            ref={ele}
+            id="HEADER_BG"
+            className="bg-white opacity-0 shadow-lg absolute top-0 left-0 right-0 bottom-0 "
+            style={{ zIndex: -1 }}
+          />
+          <div className={`max-w-1366 mx-auto py-4  flex items-center `}>
+            <NavBar
+              linkClassName={`${scrolled ? "text-black" : "text-white"}`}
+              jwt={jwt}
+              onCurrentLocationClick={onCurrentLocationClick}
+              currentLocation={currentLocation}
+            />
           </div>
         </div>
-        <div className="max-w-1366 mx-auto py-4 px-8 flex items-center">
-          <NavBar
-            jwt={jwt}
-            onCurrentLocationClick={onCurrentLocationClick}
-            currentLocation={currentLocation}
-          />
-        </div>
-        
       </div>
     </>
   )

@@ -11,7 +11,7 @@ function AboutUsContainer({}: Props): ReactElement {
   return (
     <div>
       <div
-        className="bg-no-repeat bg-center bg-cover "
+        className="bg-no-repeat bg-center bg-cover pt-24"
         style={{
           backgroundImage: `url(${require("@images/about-us-sec1-bg.png")})`,
           paddingBottom: "50px",
@@ -22,14 +22,14 @@ function AboutUsContainer({}: Props): ReactElement {
             <div className="text-center text-white">
               <h5 className="pb-2">We are,</h5>
               <h3 className="text-3xl ">
-                Reactive
+                EASY
                 <br />
-                Marketing
+                WORK FROM HOME
               </h3>
             </div>
           </div>
           <div
-            className="bg-white rounded-lg shadow-lg p-8 absolute"
+            className="bg-white rounded-lg shadow-lg p-8 absolute hidden md:block"
             style={{ bottom: "-150px" }}
           >
             <div className="flex ">
@@ -38,9 +38,9 @@ function AboutUsContainer({}: Props): ReactElement {
                   <img src={require("@images/aim-start-icon.svg")} />
                 </div>
                 <div className="">
-                  <h5 className="font-bold">Start</h5>
+                  <h5 className="font-bold">START</h5>
                   <p className="pt-2 hidden md:block">
-                    With a small sparkling ofidea in our client’s mind.
+                    JOIN US USING OUR EASY ONBOARDING PROCESS
                   </p>
                 </div>
               </div>
@@ -54,9 +54,9 @@ function AboutUsContainer({}: Props): ReactElement {
                   <img src={require("@images/aim-end-icon.svg")} />
                 </div>
                 <div className="">
-                  <h5 className="font-bold">Finish</h5>
+                  <h5 className="font-bold">FINISH</h5>
                   <p className="pt-2 hidden md:block">
-                    Complete realization with customer satisfaction.
+                    GET YOUR FIRST PAYOUT JUST AFTER A WEEK OF JOINING
                   </p>
                 </div>
               </div>
@@ -76,21 +76,30 @@ function AboutUsContainer({}: Props): ReactElement {
             zIndex: -1,
           }}
         />
-        <div className="max-w-1366 mx-auto pt-48 pb-16 px-8 md:px-0">
+        <div className="max-w-1366 mx-auto pt-16 md:pt-48 pb-16 px-8 md:px-0">
           <div className="flex">
             <div className="w-full md:w-1/2">
               <h3 className="font-bold text-xl">ABOUT THE COMPANY</h3>
               <p className="text-justify py-4">
-                Kickstarted in 2018, with an idea in mind to help industries in
-                various sectors build a solid and consistent platform to gain
-                YoY profits with the help of proven marketing strategies (built
-                in-house). As a team comprising of skillfull members, we
-                continued on acheiving milestones by completing various projects
-                of varying complexities and converting them into sustainable
-                business models. With many in-house projects developed and
-                marketing campaigns executed successfuly, out clientel expansion
-                has made it accross the globe! We thrive to acheive more and
-                more. With our increasing team comprising of domain seggregated
+                Kickstarted in 2015, with an idea in mind to help individuals,
+                from across the globe, get financial freedome by letting them
+                work from the comfort of their homes, while following the most
+                flexible work timings in the industry.
+                <br />
+                <br />
+                As a team comprising of skillfull members, we continued on
+                acheiving milestones by completing various projects of varying
+                complexities and converting them into sustainable business
+                models with the help of our tranined individuals spread all over
+                the world.
+                <br />
+                <br />
+                With many in-house projects developed and marketing campaigns
+                executed successfuly, out clientel expansion has made it accross
+                the globe as well! We thrive to acheive more and more.
+                <br />
+                <br />
+                With our increasing team comprising of domain seggregated
                 skills, we help our clients to make their clients and customers
                 even more happier!
               </p>
@@ -108,7 +117,9 @@ function AboutUsContainer({}: Props): ReactElement {
               </h3>
             </div>
             <div className="mt-8 w-1/2 md:w-1/3 mx-auto">
-              <Button type="secondary" onClick={()=>navigate("/contact")}>Contact Us</Button>
+              <Button type="secondary" onClick={() => navigate("/contact")}>
+                Contact Us
+              </Button>
             </div>
           </div>
         </Strap>
@@ -120,36 +131,31 @@ function AboutUsContainer({}: Props): ReactElement {
           </div>
           <h3 className="text-xl font-bold">OUR VISION</h3>
           <p className="text-justify py-8">
-            As enterprises and organisations becoming digitally enabled, R&D and
-            IT spends are converging to create Smart Industries. Disruptors such
-            as Cloud, IoT, Data, Machine Learning, Artificial Intelligence etc.
-            are at the core of this convergence and are driving organizational
-            efficiencies and helping build new products / services for a smarter
-            tomorrow.
+            To emerge as one of the leading online Company with main aim to
+            provide the world with easy to approach and comfortable work from
+            home job opportunities.
             <br />
             <br />
-            Technology and talent are important pillars for the these digitally
-            enabled smart industries and will be critical deciding who emerges
-            as a leader in the new smarter, connected world.
+            To accept challenges of the future, and meet them with flexible
+            solutions that help better society.
             <br />
             <br />
-            Reactive Marketing delivers cross-industry expertise in technology
-            and digital marketing, consulting, talent services and skilling to
-            enable digital transformation and accelerate innovation and company
-            growth.
+            To obtain complete customer satisfaction by judging wisely and
+            acting promptly.
             <br />
             <br />
-            Reactive Marketing with its core offerings of Marketing and IT
-            services is strategically positioned to help our clients deploy
-            their digital technology roadmaps, develop innovative products
-            faster, and create new business opportunities.
+            To seek fair action and a reasonable profit, while strictly
+            conducting ourselves in an ethical maner.
             <br />
             <br />
+            To utilize our full capabilities to maximize corporate growth and
+            promote a harmonious environment for all our remote employees and
+            their relations.
           </p>
         </div>
       </div>
-      <AboutUsStrap/>
-      <ReachOutBox/>
+      <AboutUsStrap />
+      <ReachOutBox />
     </div>
   )
 }

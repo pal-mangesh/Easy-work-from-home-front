@@ -6,12 +6,16 @@ interface INavBarProps {
   currentLocation?: any
   onCurrentLocationClick?: any
   jwt?: string
+  className?: string
+  linkClassName?: string
 }
 
 function NavBar({
   currentLocation,
   onCurrentLocationClick,
   jwt,
+  className,
+  linkClassName,
 }: INavBarProps): ReactElement {
   const [visible, setVisible] = React.useState(false)
   const data = useStaticQuery(graphql`
@@ -27,10 +31,6 @@ function NavBar({
               items {
                 title
                 href
-                items {
-                  title
-                  href
-                }
               }
             }
           }
@@ -57,21 +57,21 @@ function NavBar({
 
   return (
     <>
-      <div className="w-full">
+      <div className={`relative w-full ${className}`}>
         <div className="flex items-center w-full">
-          <div className="text-black text-lg md:text-3xl flex items-center">
+          <div className="text-black text-lg md:text-3xl flex flex-1 items-center">
             <Link
               className="text-black hover:text-gray-200  flex items-center"
               to="/"
             >
               <img
-                style={{ width: "32px" }}
+                // style={{ width: "32px" }}
                 src={require("@images/logo.svg")}
               />
             </Link>
           </div>
 
-          <div className=" hidden md:flex justify-start ml-8 flex-1">
+          <div className=" hidden md:flex justify-end ml-8 flex-1">
             {menu?.items && menu?.items.length ? (
               <>
                 <ul className="flex items-stretch list-none h-full">
@@ -79,7 +79,7 @@ function NavBar({
                     <>
                       <li className={"relative " + styles.menuItem}>
                         <Link
-                          className="text-black hover:text-gray-400"
+                          className={`text-black hover:text-gray-400 ${linkClassName}`}
                           to={item.href}
                         >
                           <span className="py-2 px-8  ">{item.title}</span>
@@ -95,7 +95,7 @@ function NavBar({
                               <ul className="py-2 bg-white rounded-lg shadow-2xl flex flex-col">
                                 {item.items.map((si: any) => (
                                   <Link
-                                    className="text-black hover:text-gray-100 hover:bg-blue-500"
+                                    className={`text-black hover:text-gray-100 hover:bg-blue-500 ${linkClassName}`}
                                     to={si.href || "#"}
                                   >
                                     <li className="p-4 ">{si.title}</li>
@@ -167,7 +167,7 @@ function NavBar({
           </div>
         </div>
         {visible ? (
-          <div className="flex flex-col md:hidden bg-gray-100 rounded-lg mt-8 shadow-xl overflow-hidden">
+          <div style={{top:"50px"}} className="absolute w-full flex flex-col md:hidden bg-gray-100 rounded-lg mt-8 shadow-xl overflow-hidden">
             {menu?.items && menu?.items.length ? (
               <>
                 <ul className="flex flex-col list-none w-full cursor-pointer">

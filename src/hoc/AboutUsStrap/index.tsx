@@ -13,12 +13,12 @@ function AboutUsStrap({}: Props): ReactElement {
         bg={require("@images/strap-bg-2.svg")}
       >
         <div className="w-full md:w-1/4 text-center my-8 md:my-0">
-          <h3 className="text-xl font-bold">50+</h3>
-          <h5 className="text-xs">Projects Delivered</h5>
+          <h3 className="text-xl font-bold">500+</h3>
+          <h5 className="text-xs">Remote WFH Staff</h5>
         </div>
         <div className="w-full md:w-1/4 text-center my-8 md:my-0">
-          <h3 className="text-xl font-bold">5000+</h3>
-          <h5 className="text-xs">Cups of Coffee</h5>
+          <h3 className="text-xl font-bold">2000+</h3>
+          <h5 className="text-xs">Projects/Clients</h5>
         </div>
         <div className="w-full md:w-1/4 text-center my-8 md:my-0">
           <h3 className="text-xl font-bold">15000+</h3>

@@ -80,7 +80,7 @@ function Select({
                       isActive(item.value)
                         ? "bg-blue-600 text-white"
                         : "bg-gray-100 text-black"
-                    } cursor-pointer rounded-lg py-4 mr-2 px-8 my-1`}
+                    } cursor-pointer text-xs rounded-lg py-4 mr-2 px-4 my-1 w-full md:w-auto`}
                     key={index}
                     onClick={_onChange(item.value)}
                   >

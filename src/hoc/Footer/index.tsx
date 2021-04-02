@@ -33,24 +33,24 @@ function Footer({}: Props): ReactElement {
         className="flex flex-col justify-center items-center bg-purple text-white w-full px-8 py-24"
       >
         <div className="max-w-1366 mx-auto w-full flex flex-col md:flex-row flex-wrap">
-          <div className="w-full md:w-1/3">
-            <div className="mb-2 flex justify-center md:justify-start">
+          <div className="w-full md:w-1/3 mb-4">
+            <div className="mb-4 flex justify-start md:justify-start">
               <img src={require("@images/logo-footer.svg")} />
             </div>
             <div className="text-sm text-gray-400 text-center md:text-justify">
-              Kickstarted in 2018, with an idea in mind to help industries in
-              various sectors build a solid and consistent platform to gain YoY
-              profits with the help of proven marketing strategies (built
-              in-house).
+              Kickstarted in 2015, with an idea in mind to help individuals,
+              from across the globe, get financial freedome by letting them work
+              from the comfort of their homes, while following the most flexible
+              work timings in the industry.
             </div>
           </div>
-          <div className="md:pl-16 md:w-1/3">
-            <div className="flex flex-wrap text-center md:text-left ">
+          <div className="md:pl-16 md:w-1/3 mb-4">
+            <div className="flex flex-wrap  text-center md:text-left ">
               {items && items.length ? (
                 <>
                   {items.map((item: any) => (
                     <>
-                      <div className="my-2 w-full md:w-1/2">
+                      <div className="my-2 w-1/2">
                         <div className="mb-2 font-bold text-lg">
                           {item.title}
                         </div>
@@ -83,7 +83,7 @@ function Footer({}: Props): ReactElement {
               )}
             </div>
           </div>
-          <div className="md:pl-16 md:w-1/3">
+          <div className="md:pl-16 md:w-1/3 mb-4">
             <div>
               <Input label="Enter Email-ID to subscribe" />
             </div>

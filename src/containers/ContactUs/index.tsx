@@ -13,93 +13,66 @@ function ContactUsContainer({}: Props): ReactElement {
   const [formData, setFormData] = React.useState({} as any)
   const [loading, setLoading] = React.useState(false)
   const [submitted, setSubmitted] = React.useState(false)
+  const [schema, setSchema] = React.useState([] as any)
 
-  const schema: IFormSchema[] = [
-    {
-      title: "Services",
-      fields: [
-        {
-          label: "Please Choose...",
-          name: "services",
-          type: "select",
-          spread: true,
-          validation: "required",
-          items: [
-            { value: "LEAD GENERATION" },
-            { value: "SEO" },
-            { value: "PAID MARKETING" },
-            { value: "SOCIAL MEDIA MARKETING" },
-            { value: "LOGO DESIGN" },
-            { value: "BRANDING" },
-            { value: "WEBSITE DESIGN" },
-            { value: "WEB APP DEVELOPMENT" },
-            { value: "ANDROID/IOS APP" },
-          ],
-          multiSelect: true,
-          wrapperClass: "md:w-full",
-        },
-      ],
-      type: "input",
-    },
-    {
-      title: "Contact Info",
-      fields: [
-        {
-          label: "Name*",
-          name: "name",
-          type: "input",
-          placeholder: "Full Name",
-          validation: "required",
-        },
-        {
-          label: "Email*",
-          name: "email",
-          type: "input",
-          placeholder: "Quote will be dispatched to this email!",
-          validation: "required",
-        },
-        {
-          label: "Website",
-          name: "website",
-          type: "input",
-          placeholder: "https://",
-        },
-        {
-          label: "Phone No.",
-          name: "phone",
-          type: "input",
-          placeholder: " ",
-        },
-        {
-          label: "Message",
-          name: "message",
-          type: "input",
-          subType: "textarea",
-          placeholder: "Please type your query here!",
-          wrapperClass: "md:w-full",
-        },
-      ],
-      type: "input",
-    },
-  ]
+  React.useEffect(() => {
+    initSchema()
+  }, [])
 
-  const handleFormChange = (data: any) => {
-    if (data) {
-      setFormData(data)
-    }
+  const initSchema = () => {
+    setSchema([
+      {
+        title: "CONTACT US",
+        fields: [
+          {
+            label: "Name*",
+            name: "name",
+            type: "input",
+            placeholder: "Full Name",
+            validation: "required",
+          },
+          {
+            label: "Email*",
+            name: "email",
+            type: "input",
+            placeholder: "required*",
+            validation: "required",
+          },
+          {
+            label: "Phone No.",
+            name: "phone",
+            type: "input",
+            placeholder: "required*",
+            validation: "required",
+            wrapperClass: "md:w-full",
+          },
+          {
+            label: "Message",
+            name: "message",
+            type: "input",
+            subType: "textarea",
+            placeholder: " ",
+            wrapperClass: "md:w-full",
+          },
+        ],
+        type: "input",
+      },
+    ])
   }
 
   const handleSubmit = async (form: any) => {
     setLoading(true)
     try {
       const { email } = form
-      const { data } = await Network.post("eusers/register", {
+      const { data } = await Network.post("leads/register", {
         email,
-        entity: form,
+        data: form,
       })
-      if (data === "OK") {
-        setSubmitted(true)
+      if (!data._id) {
+        alert("Server Error! Please try again.")
+        return
       }
+      setSubmitted(true)
     } catch (e) {
       console.error(e)
     } finally {
@@ -114,7 +87,7 @@ function ContactUsContainer({}: Props): ReactElement {
           <iframe
             scrolling="no"
             style={{ width: "100%", height: "300px" }}
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-120.37925720214845%2C50.65185499369506%2C-120.3329086303711%2C50.676092540077136&amp;layer=mapnik"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-81.33178710937501%2C39.26628442213066%2C-75.25085449218751%2C42.94436044696629&amp;layer=mapnik"
           ></iframe>
         </div>
       </div>
@@ -124,7 +97,7 @@ function ContactUsContainer({}: Props): ReactElement {
           style={{ marginTop: "-50px" }}
         >
           <div className="text-center mt-4">
-            <h3 className="text-2xl">Get Quote!</h3>
+            <h3 className="text-2xl">We are here to help you out!</h3>
           </div>
           {/* <ContactForm
             successMessage=" Successfully submitted! We will get in touch with you very soon!"
@@ -159,9 +132,11 @@ function ContactUsContainer({}: Props): ReactElement {
                   ""
                 )}
                 <ApplicationFormFull
-                  onSubmit={handleSubmit}
-                  onChange={handleFormChange}
+                  onChange={(d: any) => setFormData({ ...d })}
                   schema={schema}
+                  onSubmit={handleSubmit}
+                  disabled={loading}
+                  loading={loading}
                 />
               </>
             )}
