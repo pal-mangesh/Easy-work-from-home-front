@@ -157,8 +157,8 @@ function RegisterContainer(): ReactElement {
     setLoading(true)
     try {
       const _fd = {
-        email: formData.email,
-        data: formData,
+        email: fd.email,
+        data: fd,
         _id: uid,
       }
       const { data } = await Network.post("leads/register", _fd)
@@ -174,12 +174,12 @@ function RegisterContainer(): ReactElement {
     }
   }
 
-  const onSubmit = async (formData: any) => {
+  const onSubmit = async (fd: any) => {
     setLoading(true)
     try {
       const _fd = {
-        email: formData.email,
-        data: formData,
+        email: fd.email,
+        data: fd,
         _id: uid,
       }
       const { data } = await Network.post("leads/register", _fd)
