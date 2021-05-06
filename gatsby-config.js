@@ -59,16 +59,12 @@ module.exports = {
           items: [
             {
               title: "Privacy",
-              href: "/",
+              href: "/privacy",
             },
             {
               title: "Terms",
-              href: "/portfolio",
-            },
-            {
-              title: "FAQs",
-              href: "/about",
-            },
+              href: "/terms",
+            }
           ],
         },
         //
