@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `EASY WORK FROM HOME`,
@@ -26,6 +26,14 @@ module.exports = {
           {
             title: "Contact",
             href: "/contact",
+          },
+          {
+            title: "Privacy",
+            href: "/privacy",
+          },
+          {
+            title: "Terms",
+            href: "/terms",
           },
         ],
       },
@@ -64,7 +72,7 @@ module.exports = {
             {
               title: "Terms",
               href: "/terms",
-            }
+            },
           ],
         },
         //
