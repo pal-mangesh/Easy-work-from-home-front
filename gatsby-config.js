@@ -20,7 +20,7 @@ module.exports = {
             href: "/",
           },
           {
-            title: "Get Started",
+            title: "Apply",
             href: "/register",
           },
           {
